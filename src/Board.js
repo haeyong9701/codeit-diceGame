@@ -1,6 +1,9 @@
 import Dice from "./Dice";
 
-const Board = ({ name, color, num, sum, gameHistory }) => {
+const Board = ({ name, color, gameHistory }) => {
+  const num = gameHistory[gameHistory.length - 1] || 1;
+  const sum = gameHistory.reduce((a, b) => a + b, 0);
+
   return (
     <>
       <h2>{name}</h2>
