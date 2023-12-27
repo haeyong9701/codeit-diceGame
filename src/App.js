@@ -1,6 +1,7 @@
 import Board from "./Board";
 import Button from "./Button";
 import { useState } from "react";
+import "./App.css";
 
 const random = (n) => {
   return Math.ceil(Math.random() * n);
@@ -23,12 +24,12 @@ const App = () => {
   };
 
   return (
-    <>
+    <div className="App">
       <div>
-        <Button color="blue" onClick={handleRollClick}>
+        <Button className="App-button" color="blue" onClick={handleRollClick}>
           던지기
         </Button>
-        <Button color="red" onClick={handleClearClick}>
+        <Button className="App-button" color="red" onClick={handleClearClick}>
           처음부터
         </Button>
       </div>
@@ -36,7 +37,7 @@ const App = () => {
         <Board name="나" color="blue" gameHistory={myHistory} />
         <Board name="상대" color="red" gameHistory={otherHistory} />
       </div>
-    </>
+    </div>
   );
 };
 
